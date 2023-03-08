@@ -15,7 +15,7 @@ const taskList = document.querySelector("ul");
 const inputTask = document.querySelector("#addtaskin");
 const inputTaskBtn = document.querySelector("#add-task");
 const note = document.getElementById("no-task");
-createTaskList();
+createTaskList(tasks);
 taskList.addEventListener("click", (e) => {
   const hasClass = e.target.matches(".fa-trash-can");
   if (hasClass) {
@@ -51,13 +51,9 @@ searchTask.addEventListener("keyup", (e) => {
   const filtered = tasks.filter((task) => {
     if (task.includes(term)) return task;
   });
-  console.log(filtered);
-  for (let index = 0; index < taskList.children.length; index++) {
-    console.log(taskList.children[index].innerText, term);
-    if (!taskList.children[index].innerText.includes(term)) {
-    
-    }
-  }
+  // console.log(filtered);
+  taskList.innerHTML = "";
+  createTaskList(filtered);
 });
 inputTaskBtn.addEventListener("click", (e) => {
   if (inputTask.value == "") {
@@ -90,7 +86,7 @@ function addToTaskList() {
   taskList.append(newTask);
 }
 
-function createTaskList() {
+function createTaskList(tasks) {
   tasks.forEach((task) => {
     const newTask = document.createElement("li");
     newTask.innerHTML = ` <i class="fa-regular fa-circle-dot"></i>${task}<i class="fa-solid fa-trash-can"></i>`;
