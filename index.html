@@ -1,0 +1,49 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+
+    <title>JS Todo List</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <h1>Todo List</h1>
+
+        <button class="add-button">Add Todo</button>
+        <div class="controller hide">
+          <input type="text" placeholder="Add a task" id="addtaskin" /><button
+            class="task-bar"
+            id="add-task"
+          >
+            <i class="fa-regular fa-square-plus"></i>
+          </button>
+        </div>
+        <div class="controller">
+          <input
+            type="text"
+            placeholder="Search a task"
+            id="search-task"
+          /><button class="task-bar" id="searchtaskbtn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+
+        <div class="task-container">
+          <ul></ul>
+        </div>
+        <div id="no-task" class="hide">
+          <h3>There are no tasks in the list</h3>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
